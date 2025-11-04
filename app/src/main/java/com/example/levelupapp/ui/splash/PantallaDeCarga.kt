@@ -26,18 +26,18 @@ import kotlinx.coroutines.delay
 
 @Composable
 fun SplashScreen(navController: NavController) {
-    // Progreso de la barra (0f..1f)
+   
     var progress by remember { mutableStateOf(0f) }
-    // Visibilidad del logo, texto y barra
+    
     var visible by remember { mutableStateOf(false) }
 
     LaunchedEffect(Unit) {
         visible = true
-        val splashDuration = 2500L // milisegundos
+        val splashDuration = 2500L 
         val steps = 50
         val stepDuration = splashDuration / steps
 
-        // Animar el progreso de la barra
+        
         for (i in 0..steps) {
             progress = i / steps.toFloat()
             delay(stepDuration)
