@@ -6,7 +6,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.material3.Surface
 import androidx.navigation.compose.rememberNavController
 import com.example.levelupapp.navigation.AppNavGraph
-import com.example.levelupapp.ui.theme.PracticaTheme // usa el nombre de tu Theme de practica
+import com.example.levelupapp.ui.theme.PracticaTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
