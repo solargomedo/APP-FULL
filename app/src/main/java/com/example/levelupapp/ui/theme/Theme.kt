@@ -7,11 +7,11 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
 val DarkColorScheme = darkColorScheme(
-    primary = Color(0xFFE91E63),      // Rosa
-    onPrimary = Color.White,          // Texto sobre rosa
-    background = Color.Black,         // Fondo negro
-    onBackground = Color.White,       // Texto sobre fondo
-    surface = Color(0xFF121212),      // Superficie
+    primary = Color(0xFFE91E63),      
+    onPrimary = Color.White,          
+    background = Color.Black,         
+    onBackground = Color.White,       
+    surface = Color(0xFF121212),      
     onSurface = Color.White
 )
 
