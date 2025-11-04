@@ -52,14 +52,14 @@ fun LoginScreen(navController: NavController) {
 
             Text(
                 text = "Inicia sesión",
-                style = MaterialTheme.typography.headlineMedium, // Material3
+                style = MaterialTheme.typography.headlineMedium, 
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary
             )
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            // Formulario
+            
             TextField(
                 value = email,
                 onValueChange = { email = it },
