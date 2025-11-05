@@ -13,10 +13,11 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.levelupapp.R
+import com.example.levelupapp.ui.viewmodel.AuthViewModel
 
 
 @Composable
-fun LoginScreen(navController: NavController) {
+fun LoginScreen(navController: NavController, authViewModel: AuthViewModel) {
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
     var emailError by remember { mutableStateOf(false) }
@@ -26,6 +27,7 @@ fun LoginScreen(navController: NavController) {
         emailError = !email.contains("@")
         passError = password.length < 4
         if (!emailError && !passError) {
+            authViewModel.setEmail(email)
             navController.navigate("home") {
                 popUpTo("login") { inclusive = true }
             }
@@ -52,14 +54,14 @@ fun LoginScreen(navController: NavController) {
 
             Text(
                 text = "Inicia sesión",
-                style = MaterialTheme.typography.headlineMedium, 
+                style = MaterialTheme.typography.headlineMedium,
                 fontWeight = FontWeight.Bold,
                 color = MaterialTheme.colorScheme.primary
             )
 
             Spacer(modifier = Modifier.height(32.dp))
 
-            
+            // Formulario
             TextField(
                 value = email,
                 onValueChange = { email = it },
