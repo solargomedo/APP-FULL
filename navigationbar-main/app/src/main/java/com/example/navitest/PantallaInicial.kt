@@ -21,6 +21,9 @@ import com.example.navitest.pages.HomePage
 import com.example.navitest.pages.NotificationsPage
 import com.example.navitest.pages.SettingsPage
 
+private val icons: Any
+
+
 @Composable
 fun PantallaInicial() {
 
