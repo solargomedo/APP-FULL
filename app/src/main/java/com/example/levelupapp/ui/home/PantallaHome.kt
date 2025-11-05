@@ -17,11 +17,14 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.levelupapp.ui.categories.CategoryScreen
 import com.example.levelupapp.R
+import com.example.levelupapp.ui.viewmodel.AuthViewModel
+
 @Composable
-fun HomeScreen() {
+fun HomeScreen(authViewModel: AuthViewModel) {
     var selected by remember { mutableStateOf(0) }
     val items = listOf("Bienvenida", "Categorías", "Perfil")
     val icons = listOf(Icons.Default.Home, Icons.Default.List, Icons.Default.Person)
+    val email = authViewModel.userEmail
 
     Scaffold(
         bottomBar = {
@@ -43,8 +46,6 @@ fun HomeScreen() {
                 .padding(padding)
         ) {
             when (selected) {
-
-
                 0 -> Column(
                     modifier = Modifier
                         .fillMaxSize()
@@ -99,9 +100,7 @@ fun HomeScreen() {
                     )
                 }
 
-
                 1 -> CategoryScreen()
-
 
                 2 -> Column(
                     modifier = Modifier
@@ -141,6 +140,19 @@ fun HomeScreen() {
                         text = "Bodoque",
                         style = MaterialTheme.typography.headlineSmall,
                         fontSize = 22.sp
+                    )
+
+                    Spacer(modifier = Modifier.height(12.dp))
+
+                    Text(
+                        text = "Correo:",
+                        style = MaterialTheme.typography.bodyMedium,
+                        color = MaterialTheme.colorScheme.primary
+                    )
+
+                    Text(
+                        text = email,
+                        style = MaterialTheme.typography.bodyLarge
                     )
                 }
             }
